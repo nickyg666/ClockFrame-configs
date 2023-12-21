@@ -1,0 +1,7 @@
+#only excerpt of /etc/fb.modes, whole file is unneccessarily large
+#creates framebuffer mode for wisecco 5" round LCD
+mode "round"
+    geometry 1080 1080 1080 1080 32
+    timings 0 0 0 0 0 0 0
+    accel true
+endmode
