@@ -1,0 +1,31 @@
+#there are a bunch of these mentioned in the dash, here
+# is what they look like, very simple just hijacking the tty FBI
+#is running on, and pressing a key for a device with no keys
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+
+int main(void)
+        {
+        int hTTY = open("/dev/tty1", O_WRONLY|O_NONBLOCK);
+        ioctl(hTTY, TIOCSTI, "D");
+
+        close(hTTY);
+        return 0;
+        }
+[end fbi_del.c]
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <sys/ioctl.h>
+
+int main(void)
+        {
+        int hTTY = open("/dev/tty1", O_WRONLY|O_NONBLOCK);
+        ioctl(hTTY, TIOCSTI, "n");
+
+        close(hTTY);
+        return 0;
+        }
+[fbi_next, you get the idea]
