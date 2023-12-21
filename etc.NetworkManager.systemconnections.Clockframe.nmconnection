@@ -1,0 +1,29 @@
+# config located at /etc/NetworkManager/system-connections to enable hostapd management through NM, since NM wants to control EVERYTHING
+[connection]
+id=Clockframe
+#uuid censored for privacy as it is unique
+uuid=7XXXXXX9-d412-42be-ad9e-4XXXXXX7167
+type=wifi
+interface-name=wlan0
+autoconnect=true
+
+[wifi]
+band=bg
+mac-address-blacklist=
+mode=ap
+ssid=ClockFrame
+hidden=false
+[wifi-security]
+key-mgmt=wpa-psk
+psk=12345678
+
+[ipv4]
+dns=dnsmasq
+dhcp=dnsmasq
+address=10.0.0.1/8,10.0.0.1
+method=shared
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto
