@@ -1,0 +1,5 @@
+if [ -f /var/www/html/firstrun ]; 
+then sudo fbi /home/clockframe/splash.png --noverbose -a -m round -T 1;
+sudo rm /var/www/html/firstrun ;
+else sudo fbi /var/www/html/Pictures/*.* --random --edit --noverbose --timeout 60 -a -m round -T 1;
+fi
