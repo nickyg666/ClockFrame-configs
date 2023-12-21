@@ -1,0 +1,13 @@
+#requires round be added to /etc/fb.modes
+[round_display.service]
+[Unit]
+Description=Display resolution for custom 5" round screen
+After=local-fs.target
+DefaultDependencies=no
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fbset round
+
+[Install]
+WantedBy=multi-user.target
