@@ -1,0 +1,10 @@
+#temp.service
+[Unit]
+Description=Temperature and Battery display for webGUI
+After=default.target
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/home/clockframe/temp.sh
+TimeoutStartSec=0
