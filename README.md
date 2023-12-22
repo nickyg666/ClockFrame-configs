@@ -39,9 +39,15 @@ UPS hat (later removed):$20 shipped
 Total: ~$200
 
 Special shoutout to the following people/projects, I couldn't do any of this without the hard work of others!:
+
 FileBrowser team
+
 DropZone team
+
 Armbian community, developers, project maintainers, and special shoutout to Igor who without meaning to left me tons of advice on the forums.
-FBI creator 
+
+FBI creator (can't find the dev to credit)
+
 open source software in general
+
 Bananapi team for making the board and giving the community something to build off
