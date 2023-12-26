@@ -1,5 +1,9 @@
+#added to .bashrc to automate picture "database" update before starting up FBI
+find /var/www/html/Pictures/ -name '*.*' > '/home/clockframe/frame.lst';
+#first run splash logic, create blank file in var/www/html/firstrun to display
 if [ -f /var/www/html/firstrun ]; 
 then sudo fbi /home/clockframe/splash.png --noverbose -a -m round -T 1;
-sudo rm /var/www/html/firstrun ;
-else sudo fbi /var/www/html/Pictures/*.* --random --edit --noverbose --timeout 60 -a -m round -T 1;
+sudo rm /var/www/html/firstrun ; 
+#if not first time, load list (after a few hundred photos FBI will not launch complaining of too many arguments)
+else sudo fbi -l '/home/clockframe/frame.lst' --random --edit --noverbose --timeout 15 -a -m round -T 1;
 fi
