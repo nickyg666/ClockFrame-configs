@@ -7,14 +7,20 @@ I initially wanted battery backup to provide enough time to safely power down th
 
 I tried to include the most pertinent configuration files to showcase what I did behind the scenes to make it all happen.
 I only included a few samples of the C files I compiled to make the webapp work and make FBI interactive, as it's very simple and just pretends we are using an attached keyboard to control the slideshow.
-Commandline arguments provided in .bashrc drive the initial photo hold time and other parameters such as framebuffer resolution. this can be changed on the fly with the custom exec field at the bottom of the web dash for full control or at the top for just slideshow timing.
 
-This is the final version with files copied from my actual working project. I may have copied the wrong .bashrc I  believe it is using the root .bashrc with some logic to generate a list of files to be used in the slideshow on shutdown and reboot so things are always updated.
+Commandline arguments provided in .bashrc generate a list of files for FBI to load, check if firstrun flag is set and based on that decides whether to display the initial configuration splash or not, and finally launch FBI with some default parameters. this can be changed on the fly with the custom exec field at the bottom of the web dash for full control or at the top for just slideshow timing in the web dash or manually changed in .bashrc for permanent changes. 
+
+This is the final version with files copied from my actual working project.
+At some point I will include a base image of armbian without my personal photos, ready for another bananapi m2zero, or at least which armbian image I built it off of.
+
 To back it up, I simply power off through the web dash, eject the SD card and do a dd backup to an img then pipe it to GZ to get a backup.img.gz
+
 Included are some photos during assembly and programming, as well as finished photos.
+
 You are free to use my configurations for your own projects as you like.
-Some of the things I used in this project are *NOT* cool to be used commercially without the author's consent, so please do read about the licensing of things you plan on using in commercial projects.
-I did fail to pull the favicon and custom filebrowser branding I created for the ClockFrame, it came out really nice.
+
+Some of the things I used in this project are *NOT* cool to be used commercially without the author's consent,(filebrowser, dropzone for sure) so please do read about the licensing of things you plan on using in commercial projects.
+I did fail to pull the favicon but it is the same icon shown in the custom branding / filebrowser image.
 
 BOM:
 
@@ -22,7 +28,7 @@ wisecco 5" round screen with video driver/power board: $128 at time of purchase 
 
 bananapi m2zero: ~$30 shipped
 
-bezel : < $2 PLA filament and borrowing printer
+bezel : < $2 PLA filament and borrowing printer (will upload .stl if I can find)
 
 clock : $15 at Target
 
